@@ -1,13 +1,12 @@
 class Solution(object):
     def maxProfit(self, prices):
+        min = prices[0]
         profit = 0
         for num in prices:
-            prices2 = prices
-            prices2.remove(num)
-            for num2 in prices2:
-                dif = num2 - num
-                if profit < dif:
-                    profit = dif
+            if num < min:
+                min = num
+            if num - min > profit:
+                profit = num - min
         print(profit)
 
 run = Solution()
