@@ -1,10 +1,11 @@
 # https://leetcode.com/problems/contains-duplicate/
 class Solution(object):
     def containsDuplicate(self, nums):
+        hashset = set()
         for num in nums:
-            nums.remove(num)
-            if num in nums:
+            if num in hashset:
                 return True
+            hashset.add(num)
         return False
 
 run = Solution()
